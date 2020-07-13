@@ -10,7 +10,44 @@ void yyerror(char *);
 
 %%
 
+[0-9.]+ {
+	return N;
+}
 
+(\"[A-Za-z0-9 ]+\") {
+	return STR;
+}
+
+, {
+	return ',';
+}
+
+
+[\:] {
+	return ':';
+}
+
+\{ {
+	return '{';
+}
+
+
+\} {
+	return '}';
+}
+
+\[ {
+	return '[';
+
+}
+
+\] {
+	return ']';
+}
+
+[\n] ;
+[[:space:]]+ ; 
+. ;
 
 %%
 
